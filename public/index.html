@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Memory Game</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar sticky">
+        <div class="logo-container">
+            <img src="gurukilli.jpg" alt="Gurukilli Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="authentication/frontend/register.html">Subjects</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="authentication/frontend/register.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <div id="loginScreen">
+        <h2>Enter Your Username</h2>
+        <input type="text" id="username" placeholder="Your Name">
+        <button onclick="joinGame()">Join Game</button>
+    </div>
+
+    <div id="gameScreen" style="display: none;">
+        <h2 id="playerInfo"></h2>
+        <p>Time Left: <span id="timer">200</span> seconds</p>
+        <div id="gameBoard"></div>
+        <button id="submitBtn" onclick="submitGame()" disabled>Submit</button>
+    </div>
+
+    <div id="resultScreen" style="display: none;">
+        <h2 id="winnerMessage"></h2>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
